@@ -38,7 +38,7 @@
 
       <form id="reSterileForm" class="space-y-6" autocomplete="off">
         
-        <!-- 1. ข้อมูลอุปกรณ์ (ตัดบาร์โค้ดออก + ทำเป็น Searchable Dropdown) -->
+        <!-- 1. ข้อมูลอุปกรณ์ -->
         <div>
           <h3 class="text-md font-semibold text-slate-700 mb-3">1. ข้อมูลอุปกรณ์</h3>
           <div class="relative">
@@ -56,9 +56,8 @@
               </div>
             </div>
 
-            <!-- ลิสต์ตัวเลือกที่จะแสดงเมื่อคลิกหรือพิมพ์ค้นหา -->
+            <!-- ลิสต์ตัวเลือก -->
             <ul id="itemListDropdown" class="absolute z-20 w-full mt-1 bg-white border border-slate-200 rounded-lg shadow-lg max-h-60 overflow-y-auto hidden divide-y divide-slate-100">
-              <!-- รายการจะถูกแทรกด้วย JavaScript -->
             </ul>
             <p class="text-xs text-slate-400 mt-1">สามารถเลือกจากรายการ หรือพิมพ์ชื่อใหม่ได้โดยตรง</p>
           </div>
@@ -77,23 +76,23 @@
                 <option value="หอผู้ป่วยไมตรี5">หอผู้ป่วยไมตรี5</option>
                 <option value="หอผู้ป่วยไมตรี4">หอผู้ป่วยไมตรี4</option>
                 <option value="หอผู้ป่วยอายุรกรรมชาย">หอผู้ป่วยอายุรกรรมชาย</option>
-                 <option value="หอผู้ป่วยอายุรกรรมหญิง">หอผู้ป่วยอายุรกรรมหญิง</option>
+                <option value="หอผู้ป่วยอายุรกรรมหญิง">หอผู้ป่วยอายุรกรรมหญิง</option>
                 <option value="หอผู้ป่วยกุมารเวชกรรม">หอผู้ป่วยกุมารเวชกรรม</option>
                 <option value="หอผู้ป่วย(NICU)">หอผู้ป่วย(NICU)</option>
-                 <option value="หอผู้ป่วย(OPD15)">หอผู้ป่วย(OPD15)</option>
+                <option value="หอผู้ป่วย(OPD15)">หอผู้ป่วย(OPD15)</option>
                 <option value="หอผู้ป่วย(OPD2)">หอผู้ป่วย(OPD2)</option>
                 <option value="หอผู้ป่วย(OPD11)">หอผู้ป่วย(OPD11)</option>
-                 <option value="หอผู้ป่วย(OPD25)">หอผู้ป่วย(OPD25)</option>
+                <option value="หอผู้ป่วย(OPD25)">หอผู้ป่วย(OPD25)</option>
                 <option value="หอผู้ป่วย(OPD30)">หอผู้ป่วย(OPD30)</option>
                 <option value="หอผู้ป่วย(OPDENT)">หอผู้ป่วย(OPDENT)</option>
-                 <option value="หอผู้ป่วย(OPDANC)">หอผู้ป่วย(OPDANC)</option>
+                <option value="หอผู้ป่วย(OPDANC)">หอผู้ป่วย(OPDANC)</option>
                 <option value="หอผู้ป่วย(OPD18)">หอผู้ป่วย(OPD18)</option>
                 <option value="ห้องคลอด (LR)">ห้องคลอด (LR)</option>
-                 <option value="หลังคลอด (RR)">หลังคลอด (RR)</option>
+                <option value="หลังคลอด (RR)">หลังคลอด (RR)</option>
                 <option value="หอผู้ป่วย(OPDจักษุ)">หอผู้ป่วย(OPDจักษุ)</option>
                 <option value="หอผู้ป่วย(จักษุ)">หอผู้ป่วย(จักษุ)</option>
-                 <option value="หอผู้ป่วยศัลยกรรมกระดก(ORTHO)">หอผู้ป่วยศัลยกรรมกระดก(ORTHO)</option>
-                 <option value="ห้องเอ็กซเรย์(X-RAY)">ห้องเอ็กซเรย์(X-RAY)</option>
+                <option value="หอผู้ป่วยศัลยกรรมกระดก(ORTHO)">หอผู้ป่วยศัลยกรรมกระดก(ORTHO)</option>
+                <option value="ห้องเอ็กซเรย์(X-RAY)">ห้องเอ็กซเรย์(X-RAY)</option>
                 <option value="ห้องตรวจปอด">ห้องตรวจปอด</option>
                 <option value="ทันตกรรม (Dental)">ทันตกรรม (Dental)</option>
                 <option value="ศูนย์ส่องกล้อง">ศูนย์ส่องกล้อง</option>
@@ -117,11 +116,10 @@
           </div>
         </div>
 
-        <!-- 3. ประเภทการรีสเตอไรส์ (ปุ่มคลิก SA / EO / HP) -->
+        <!-- 3. ประเภทการรีสเตอไรส์ -->
         <div>
           <h3 class="text-md font-semibold text-slate-700 mb-2">3. ประเภทการรีสเตอไรส์ <span class="text-red-500">*</span></h3>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <!-- ปุ่ม SA -->
             <label class="relative flex flex-col items-center justify-center p-4 border-2 rounded-xl cursor-pointer transition-all hover:bg-slate-50 has-[:checked]:border-teal-600 has-[:checked]:bg-teal-50/50 has-[:checked]:text-teal-900 border-slate-200">
               <input type="radio" name="sterileType" value="SA (ไอน้ำ)" class="peer sr-only" checked>
               <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold mb-1 peer-checked:bg-teal-600 peer-checked:text-white transition">
@@ -131,7 +129,6 @@
               <span class="text-xs text-slate-500 text-center">ไอน้ำ (Steam)</span>
             </label>
 
-            <!-- ปุ่ม EO -->
             <label class="relative flex flex-col items-center justify-center p-4 border-2 rounded-xl cursor-pointer transition-all hover:bg-slate-50 has-[:checked]:border-teal-600 has-[:checked]:bg-teal-50/50 has-[:checked]:text-teal-900 border-slate-200">
               <input type="radio" name="sterileType" value="EO (แก๊สเอทิลีนออกไซด์)" class="peer sr-only">
               <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold mb-1 peer-checked:bg-teal-600 peer-checked:text-white transition">
@@ -141,7 +138,6 @@
               <span class="text-xs text-slate-500 text-center">แก๊สเอทิลีนออกไซด์</span>
             </label>
 
-            <!-- ปุ่ม HP -->
             <label class="relative flex flex-col items-center justify-center p-4 border-2 rounded-xl cursor-pointer transition-all hover:bg-slate-50 has-[:checked]:border-teal-600 has-[:checked]:bg-teal-50/50 has-[:checked]:text-teal-900 border-slate-200">
               <input type="radio" name="sterileType" value="HP (แก๊สพลาสม่า)" class="peer sr-only">
               <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold mb-1 peer-checked:bg-teal-600 peer-checked:text-white transition">
@@ -153,13 +149,12 @@
           </div>
         </div>
 
-        <!-- 4. ผู้บันทึก (เปลี่ยนเป็น Dropdown) และหมายเหตุ -->
+        <!-- 4. ผู้บันทึก และหมายเหตุ -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-medium mb-1" for="recordedBy">ชื่อเจ้าหน้าที่ผู้บันทึก <span class="text-red-500">*</span></label>
             <select id="recordedBy" required class="w-full px-3 py-2.5 border rounded-lg bg-white outline-none">
               <option value="">-- เลือกชื่อเจ้าหน้าที่ --</option>
-              <!-- แก้ไข/เพิ่มรายชื่อเจ้าหน้าที่จ่ายกลางของคุณตรงนี้ -->
               <option value="นายนนทกฤษณ์ นาคฤทธิ์">นายนนทกฤษณ์ นาคฤทธิ์</option>
               <option value="นางกิตติยา ขจร">นางกิตติยา ขจร</option>
               <option value="นายกิตติชาติ คำทรา">นายกิตติชาติ คำทรา</option>
@@ -205,152 +200,41 @@
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyFkb2tUZkmL82I5OdbR4phq0Vt6Uo2i6G21gnOc2VDsdC5X-Pyc4QRxY6UbJvc9PVEQg/exec";
     const SPREADSHEET_ID  = "1EQS-XZ3Y7zO3EiXWpvO9TnsTeWnQW3ShKqp1aqGo1Qw";
 
-    // รายการเซ็ตเครื่องมือสำหรับค้นหาในดรอปดาวน์ (สามารถเพิ่มหรือแก้ไขชื่อได้ที่นี่)
     const ITEM_LIST = [
-    
-        "Colluget Suction",
-        "Adson NonTooth Foceps",
-        "Adson Tooth Foceps",
-        "Airway",
-        "Alis Forcps",
-        "AngledBiopsyForceps",
-        "Artery โค้ง",
-        "Artery ตรง",
-        "TSไตเทียม",
-        "DualLumenCatheterKit",
-        "Eye Spculum",
-        "Set Flush ใหญ่",
-        "FlowSensor C1",
-        "FlowSensorStaphant",
-        "Folary Cat",
-        "Guide",
-        "InsulinSiring",
-        "MaskAmbu",
-        "MaskBag",
-        "MaskNo1",
-        "MicroscopeSlides",
-        "MiniLap",
-        "MouthGuard",
-        "NasoPharynGealAirway",
-        "Needle Holder",
-        "NonTooth Forceps",
-        "Nozzle",
-        "O2HumidifierBottom",
-        "Opsite",
-        "OptiflowNasalCanula",
-        "Oral Airway No.2",
-        "Oral Airway No.3",
-        "Oral Airway No.4",
-        "OxygenConnector",
-        "PEEP Value",
-        "Pencil",
-        "Proctoseope",
-        "ReusableFlexTube",
-        "ReuseAbleChamber",
-        "Rubber Gloves",
-        "Sb ดมยา",
-        "Set BIRD",
-        "Set Bone Marrow",
-        "Set C1",
-        "Set Cutdown",
-        "Set Drager",
-        "Set Dressing เล็ก",
-        "Set Dressing ใหญ่",
-        "Set Flush",
-        "Set I C D",
-        "Set I+C",
-        "Set Scrub",
-        "Set Suture",
-        "Set Suture (1ปี)",
-        "Set Test BLADDER",
-        "Set Urine",
-        "Set Urine 1ปี",
-        "Set เจาะท้อง",
-        "Set เจาะปอด",
-        "Set เจาะเยื่อหุ้มปอด",
-        "Set เจาะหลัง",
-        "Set ตัดสายสะดือ",
-        "Set ถอดฝังยาคุม(OPD30)",
-        "Set เย็บคลอด",
-        "Speculum",
-        "SpongeForcep",
-        "SprayBottle",
-        "Suture Thread",
-        "Syringe Irrigate",
-        "Syringe Tube",
-        "TestLungKid",
-        "Tooth Foceps",
-        "T-P Bottom",
-        "T-pice",
-        "Trachea Mask",
-        "Tray ฉีดยา",
-        "Trocar",
-        "TweeZer",
-        "Video ScopeDispostBlade",
-        "Y Tube (1ปี)",
-        "กรรไกร Off Max",
-        "กรรไกรBabcock",
-        "กรรไกรตัดก๊อซ",
-        "กรรไกรตัดเนื้อ",
-        "กรรไกรตัดไหม",
-        "กรรไกรตัดไหมปลายมน",
-        "กระปุกForcps",
-        "กระปุกดมยา วิสัญญี",
-        "ขวด ICD ปากก้วาง",
-        "ขวด ICD ปากแคบ",
-        "ขวดAlcohol",
-        "ขวดเก็บตัวอย่าง",
-        "ขวดน้ำ",
-        "ขวดเล็ก",
-        "ข้อต่อ",
-        "Set ขันล้างท้อง",
-        "ชุดกระปุกForcps+กรรไกร",
-        "ชุดเป่าปอด+สาย",
-        "ชุดวัดน้ำไขสันหลัง(1ปี)",
-        "เช็ดตา จักษุ",
-        "เช็ดตา สูติกรรม",
-        "ด้ามมีด",
-        "ถาด จักษุ",
-        "ที่ปิดตาเด็ก",
-        "แท่งแก้ว",
-        "ไม้กดลิ้น",
-        "ลูกสูบยางแดง",
-        "แว่นตา",
-        "สาย Colluget",
-        "สาย ICD",
-        "สาย Inspired",
-        "สาย Neupff",
-        "สาย Suction",
-        "สาย Suction OR",
-        "สายยางสั้นสีเหลือง",
-        "สายสวนปัสสาวะแดง No.14",
-        "สายสวนปัสสาวะแดง No.16",
-        "สายสีเขียวสั้น",
-        "อัปสำลี",
-        "อัปสำลี วิสัญญี",
-        "sponge forceps",
-        "Set ถอดยาฝังคุมกำเนิด",
-        "Proctoscope",
-        "ชามรูปไต",
-        "ผ้า non woven เจาะกลาง ขนาด 60×60cm",
-        "กระป๋อง T-piece",
-        "Artery ตรง No.16",
-        "Artery ตรง No.18",
-        "Artery ตรง No.20",
-        "Artery โค้ง No.16",
-        "Artery โค้ง No.18",
-        "Artery โค้ง No.20",
-        "Metzenbaum Scissor curved no.10",
-        "Metzenbaum Scissor curved no.14",
-        "Metzenbaum Scissor curved no.18",
-        "Metzenbaum Scissor curved no.23",
-        "Intestinal Clamp",
-        "Right angle clamp",
-        "Long forceps",
-        "Long fine forceps",
-        "Babcock tissue forceps",
-        "Sponge holding forceps",
-         "ถ้วยน้ำยา"
+        "Colluget Suction", "Adson NonTooth Foceps", "Adson Tooth Foceps", "Airway",
+        "Alis Forcps", "AngledBiopsyForceps", "Artery โค้ง", "Artery ตรง", "TSไตเทียม",
+        "DualLumenCatheterKit", "Eye Spculum", "Set Flush ใหญ่", "FlowSensor C1",
+        "FlowSensorStaphant", "Folary Cat", "Guide", "InsulinSiring", "MaskAmbu",
+        "MaskBag", "MaskNo1", "MicroscopeSlides", "MiniLap", "MouthGuard",
+        "NasoPharynGealAirway", "Needle Holder", "NonTooth Forceps", "Nozzle",
+        "O2HumidifierBottom", "Opsite", "OptiflowNasalCanula", "Oral Airway No.2",
+        "Oral Airway No.3", "Oral Airway No.4", "OxygenConnector", "PEEP Value",
+        "Pencil", "Proctoseope", "ReusableFlexTube", "ReuseAbleChamber", "Rubber Gloves",
+        "Sb ดมยา", "Set BIRD", "Set Bone Marrow", "Set C1", "Set Cutdown",
+        "Set Drager", "Set Dressing เล็ก", "Set Dressing ใหญ่", "Set Flush",
+        "Set I C D", "Set I+C", "Set Scrub", "Set Suture", "Set Suture (1ปี)",
+        "Set Test BLADDER", "Set Urine", "Set Urine 1ปี", "Set เจาะท้อง",
+        "Set เจาะปอด", "Set เจาะเยื่อหุ้มปอด", "Set เจาะหลัง", "Set ตัดสายสะดือ",
+        "Set ถอดฝังยาคุม(OPD30)", "Set เย็บคลอด", "Speculum", "SpongeForcep",
+        "SprayBottle", "Suture Thread", "Syringe Irrigate", "Syringe Tube",
+        "TestLungKid", "Tooth Foceps", "T-P Bottom", "T-pice", "Trachea Mask",
+        "Tray ฉีดยา", "Trocar", "TweeZer", "Video ScopeDispostBlade", "Y Tube (1ปี)",
+        "กรรไกร Off Max", "กรรไกรBabcock", "กรรไกรตัดก๊อซ", "กรรไกรตัดเนื้อ",
+        "กรรไกรตัดไหม", "กรรไกรตัดไหมปลายมน", "กระปุกForcps", "กระปุกดมยา วิสัญญี",
+        "ขวด ICD ปากก้วาง", "ขวด ICD ปากแคบ", "ขวดAlcohol", "ขวดเก็บตัวอย่าง",
+        "ขวดน้ำ", "ขวดเล็ก", "ข้อต่อ", "Set ขันล้างท้อง", "ชุดกระปุกForcps+กรรไกร",
+        "ชุดเป่าปอด+สาย", "ชุดวัดน้ำไขสันหลัง(1ปี)", "เช็ดตา จักษุ", "เช็ดตา สูติกรรม",
+        "ด้ามมีด", "ถาด จักษุ", "ที่ปิดตาเด็ก", "แท่งแก้ว", "ไม้กดลิ้น", "ลูกสูบยางแดง",
+        "แว่นตา", "สาย Colluget", "สาย ICD", "สาย Inspired", "สาย Neupff",
+        "สาย Suction", "สาย Suction OR", "สายยางสั้นสีเหลือง", "สายสวนปัสสาวะแดง No.14",
+        "สายสวนปัสสาวะแดง No.16", "สายสีเขียวสั้น", "อัปสำลี", "อัปสำลี วิสัญญี",
+        "sponge forceps", "Set ถอดยาฝังคุมกำเนิด", "Proctoscope", "ชามรูปไต",
+        "ผ้า non woven เจาะกลาง ขนาด 60×60cm", "กระป๋อง T-piece", "Artery ตรง No.16",
+        "Artery ตรง No.18", "Artery ตรง No.20", "Artery โค้ง No.16", "Artery โค้ง No.18",
+        "Artery โค้ง No.20", "Metzenbaum Scissor curved no.10", "Metzenbaum Scissor curved no.14",
+        "Metzenbaum Scissor curved no.18", "Metzenbaum Scissor curved no.23",
+        "Intestinal Clamp", "Right angle clamp", "Long forceps", "Long fine forceps",
+        "Babcock tissue forceps", "Sponge holding forceps", "ถ้วยน้ำยา"
     ];
 
     // =========================================================================
@@ -383,7 +267,6 @@
       }
     }
 
-    // แสดงรายการเมื่อคลิกหรือพิมพ์ค้นหา
     itemSearchInput.addEventListener('focus', () => {
       renderItemList(itemSearchInput.value);
       itemListDropdown.classList.remove('hidden');
@@ -394,7 +277,6 @@
       itemListDropdown.classList.remove('hidden');
     });
 
-    // ซ่อนดรอปดาวน์เมื่อคลิกนอกพื้นที่
     document.addEventListener('click', (e) => {
       if (!itemSearchInput.contains(e.target) && !itemListDropdown.contains(e.target)) {
         itemListDropdown.classList.add('hidden');
@@ -409,7 +291,7 @@
     }
 
     // =========================================================================
-    // 3. ฟังก์ชันส่งข้อมูลเข้า Google Sheets
+    // 3. ฟังก์ชันส่งข้อมูลเข้า Google Sheets และแจ้งเตือน LINE
     // =========================================================================
     const form = document.getElementById('reSterileForm');
     const alertBox = document.getElementById('statusAlert');
@@ -424,7 +306,6 @@
 
       const selectedType = document.querySelector('input[name="sterileType"]:checked').value;
 
-      // เตรียมข้อมูลส่งไปที่ Apps Script
       const payload = {
         itemName: itemSearchInput.value.trim(),
         department: document.getElementById('department').value,
@@ -435,15 +316,18 @@
       };
 
       try {
+        // ⚠️ จุดแก้ไขสำคัญ: ปรับ Content-Type เป็น text/plain;charset=utf-8 สำหรับ Apps Script doPost
         await fetch(APPS_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'text/plain;charset=utf-8' 
+          },
           body: JSON.stringify(payload)
         });
 
         alertBox.className = 'mt-4 p-4 rounded-lg text-sm bg-emerald-50 text-emerald-800 border border-emerald-200 block';
-        alertBox.innerHTML = `✅ <strong>บันทึกสำเร็จ!</strong>: ${payload.itemName} [${payload.sterileType}] โดย ${payload.recordedBy} บันทึกลงชีตเรียบร้อย`;
+        alertBox.innerHTML = `✅ <strong>บันทึกสำเร็จ!</strong>: ${payload.itemName} [${payload.sterileType}] โดย ${payload.recordedBy} บันทึกลงชีตและแจ้งเตือน LINE เรียบร้อย`;
         
         form.reset();
         resetFormCustom();
