@@ -266,7 +266,7 @@
     // =========================================================================
     // 1. กำหนดค่าตั้งต้น
     // =========================================================================
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbytbOu3rm_WpTgmsaqcE2oZzK39DuAt-1DBFj8bSfPp6YiOdS180OPq1pN1s-lM-P1zXA/exec";
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz8YELK3tSZJ4GAbl56lpJiWBtwwQdpoOMNhIxPo3BmME8N0pId45FhYuvb0Jm4gXUMGg/exec";
     const SPREADSHEET_ID  = "1EQS-XZ3Y7zO3EiXWpvO9TnsTeWnQW3ShKqp1aqGo1Qw";
 
     const ITEM_LIST = [
@@ -366,15 +366,13 @@
     const alertBox = document.getElementById('statusAlert');
     const btnSubmit = document.getElementById('btnSubmit');
     const btnText = document.getElementById('btnText');
-
-    form.addEventListener('submit', async (e) => {
+form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       btnSubmit.disabled = true;
       btnText.innerText = "กำลังบันทึก...";
 
       const selectedType = document.querySelector('input[name="sterileType"]:checked').value;
-
       const quantityInput = document.getElementById('quantity');
       const quantity = Number(quantityInput.value);
 
@@ -387,18 +385,21 @@
         return;
       }
 
+      const recordedByVal = document.getElementById('recordedBy').value;
+      const otherStaffNameVal = document.getElementById('otherStaffName').value.trim();
+
       const payload = {
         itemName: itemSearchInput.value.trim(),
         quantity: quantity,
         department: document.getElementById('department').value,
         reason: document.getElementById('reason').value,
         sterileType: selectedType,
-        recordedBy: document.getElementById('recordedBy').value,
+        recordedBy: recordedByVal,
+        otherStaffName: otherStaffNameVal,
         notes: document.getElementById('notes').value.trim()
       };
 
       try {
-        // ⚠️ จุดแก้ไขสำคัญ: ปรับ Content-Type เป็น text/plain;charset=utf-8 สำหรับ Apps Script doPost
         await fetch(APPS_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
@@ -408,11 +409,13 @@
           body: JSON.stringify(payload)
         });
 
+        const displayName = recordedByVal === 'อื่นๆ' ? otherStaffNameVal : recordedByVal;
         alertBox.className = 'mt-4 p-4 rounded-lg text-sm bg-emerald-50 text-emerald-800 border border-emerald-200 block';
-        alertBox.innerHTML = `✅ <strong>บันทึกสำเร็จ!</strong>: ${payload.itemName} จำนวน ${payload.quantity} [${payload.sterileType}] โดย ${payload.recordedBy} บันทึกลงชีตและแจ้งเตือน LINE เรียบร้อย`;
+        alertBox.innerHTML = `✅ <strong>บันทึกสำเร็จ!</strong>: ${payload.itemName} จำนวน ${payload.quantity} [${payload.sterileType}] โดย ${displayName} บันทึกลงชีตและแจ้งเตือน LINE เรียบร้อย`;
         
         form.reset();
         resetFormCustom();
+        if (typeof toggleOtherStaff === 'function') toggleOtherStaff();
         itemSearchInput.focus();
 
       } catch (error) {
